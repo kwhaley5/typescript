@@ -14,6 +14,8 @@ export class NewTicketComponent implements AfterViewInit {
 
   // @ViewChild('form') form?: ElementRef<HTMLFormElement> 
   private form = viewChild.required<ElementRef<HTMLFormElement>>('form')
+  enteredTitle = ''
+  enteredRequest = ''
   add = output<{title: string; text: string}>()
 
   constructor () {
@@ -30,10 +32,12 @@ export class NewTicketComponent implements AfterViewInit {
     
   }
 
-  onSubmit(titleElement: HTMLInputElement, textAreaValue: string ) {
-    this.add.emit({title: titleElement.value, text: textAreaValue})
+  onSubmit( ) {
+    this.add.emit({title: this.enteredTitle, text: this.enteredRequest})
 
     // this.form?.nativeElement.reset()
-    this.form().nativeElement.reset()
+    // this.form().nativeElement.reset()
+    this.enteredRequest = ''
+    this.enteredTitle = ''
   }
 }
