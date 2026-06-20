@@ -11,5 +11,6 @@ import { Task } from './task/task.model';
   imports: [TaskComponent],
 })
 export class TasksComponent {
+  
   userTasks: Task[] = [];
 }
