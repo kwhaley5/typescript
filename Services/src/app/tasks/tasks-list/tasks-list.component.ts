@@ -5,15 +5,14 @@ import { TasksService } from '../tasks.service';
 import { Task, TASK_STATUS_OPTIONS, TaskStatusOptions } from '../task.model';
 
 @Component({
-  selector: 'app-tasks-list',
-  standalone: true,
-  templateUrl: './tasks-list.component.html',
-  styleUrl: './tasks-list.component.css',
-  imports: [TaskItemComponent],
-  providers: [{
-    provide: TASK_STATUS_OPTIONS,
-    useValue: TaskStatusOptions
-  }]
+    selector: 'app-tasks-list',
+    templateUrl: './tasks-list.component.html',
+    styleUrl: './tasks-list.component.css',
+    imports: [TaskItemComponent],
+    providers: [{
+            provide: TASK_STATUS_OPTIONS,
+            useValue: TaskStatusOptions
+        }]
 })
 export class TasksListComponent {
   private tasksService = inject(TasksService);

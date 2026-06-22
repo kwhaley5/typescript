@@ -5,11 +5,10 @@ import { Task, TASK_STATUS_OPTIONS, TaskStatus } from '../../task.model';
 import { TasksService } from '../../tasks.service';
 
 @Component({
-  selector: 'app-task-item',
-  standalone: true,
-  imports: [FormsModule],
-  templateUrl: './task-item.component.html',
-  styleUrl: './task-item.component.css',
+    selector: 'app-task-item',
+    imports: [FormsModule],
+    templateUrl: './task-item.component.html',
+    styleUrl: './task-item.component.css'
 })
 export class TaskItemComponent {
   private tasksService = inject(TasksService)
